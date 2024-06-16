@@ -26,29 +26,40 @@ export function NoteList ({ availableTags, notes }: NoteListProps ) {
             <Row className="align-items-center mb-4">
                 <Col>
                     <h1>Notes</h1>
-                    <Col xs="auto">
-                        <Stack gap={2} direction="horizontal" className="justify-content-end">
-                            <Link to="/new">
-                                <Button variant="primary">Create</Button>
-                            </Link>
-                            <Button variant="outline-secondary">Edit Tags</Button>
-                        </Stack>
-                    </Col>            
                 </Col>
+                <Col xs="auto">
+                    <Stack gap={2} direction="horizontal">
+                        <Link to="/new">
+                            <Button 
+                                variant="primary"
+                            >
+                                    Create
+                            </Button>
+                        </Link>
+                        <Button 
+                            variant="outline-secondary"
+                        >
+                                Edit Tags
+                        </Button>
+                    </Stack>
+                </Col>            
             </Row>
             <Form>
-                <Row className="mb=4">
+                <Row className="mb-4">
                     <Col>
                         <Form.Group controlId="title">
                             <Form.Label>Title</Form.Label>
-                            <Form.Control type="text"  value={title} onChange={e => setTitle(e.target.value)}/>
+                            <Form.Control 
+                                type="text"  
+                                value={title} 
+                                onChange={e => setTitle(e.target.value)}
+                            />
                         </Form.Group>
                     </Col>
                     <Col>
                         <Form.Group controlId="tags">
                             <Form.Label>Tags</Form.Label>
                             <ReactSelect 
-                              
                                 value={selectedTags.map(tag => {
                                     return {label: tag.label, value: tag.id}
                                 })}
