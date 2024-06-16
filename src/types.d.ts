@@ -38,4 +38,7 @@ export type SimplifiedNote = {
     tags: Tag[]
     title: string
     id: string
-  }
+}
+export type NoteLayoutProps = {
+    notes: Note[]
+}
